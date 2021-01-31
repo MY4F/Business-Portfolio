@@ -1,0 +1,20 @@
+.container{
+  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 300px 300px;
+  grid-template-areas:
+  "banner header"
+  "banner info";
+
+}
+.banner{
+  grid-area: banner;
+}
+.header{
+  grid-area: header;
+}
+.info{
+  display: flex;
+  grid-area: info;
+}
