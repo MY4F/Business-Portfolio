@@ -1,20 +1,43 @@
+body{
+  background-color: #ececec;
+}
 .container{
   border: 1px solid blue;
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  grid-template-rows: 300px 300px;
+  grid-template-columns:25% 75%;
+  grid-template-rows: 48vh 48vh;
+  grid-gap: 9px;
   grid-template-areas:
   "banner header"
   "banner info";
-
 }
 .banner{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   grid-area: banner;
+  border: 1px solid blue;
+  border-radius: 10%;
+  height: 80%;
+  width: 100%;
+}
+.banner >span{
+  padding: 10px;
+}
+img{
+  padding: 20px;
+  margin: 0 auto;
+  width:50%;
+  border-radius: 50%;;
 }
 .header{
   grid-area: header;
+  border: 1px solid blue;
 }
 .info{
   display: flex;
   grid-area: info;
+  border: 1px solid blue;
 }
