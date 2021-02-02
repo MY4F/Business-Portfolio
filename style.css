@@ -1,19 +1,20 @@
 body{
   margin: 0;
   top: 0;
-  font-family: "Segoe UI",Arial,sans-serif;
+  bottom: 0;
+  font-family:courier,arial,helvetica;
   font-size: 1.5vw;
   display: flex;
   flex-direction: row;
-  height: 100%;
   transition: 1s;
+  background-image:linear-gradient(90deg, rgba(19,78,94,1) 0%, rgba(113,178,128,1) 100%);
 }
 .container{
   margin: 0;
   top: 0;
   display: grid;
   grid-template-columns:100%;
-  grid-template-rows: 16vh 0.8fr 9vh 27.9vh;
+  grid-template-rows: 16vh 0.8fr 9vh 10.7vh;
   grid-gap: 15px;
   grid-template-areas:
   "header"
@@ -22,7 +23,6 @@ body{
   "info";
   padding: 0;
   margin: 0;
-  background:#034f84;
   color: white;
   animation: 2s ease-out 0s 1 slideInFromRight;
 }
@@ -31,36 +31,48 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  width: 200%;
   height: 720px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  background:#f7cac9;
-  color: black;
+  color: white;
   animation: 1s ease-out 0s 1 slideInFromTop;
 }
 .banner >span{
   padding: 10px;
-  font-size: 1.2vw;
-  text-align: left;
-  margin: 0 auto;
+  font-size: 1.5vw;
   transition: 1s;
 }
 .banner>img{
   padding: 20px;
   margin: 0 auto;
-  width:50%;
+  width:75%;
   border-radius: 50%;
+}
+.banner>a{
+  text-decoration: none;
+  text-align: left;
+  padding: 10px;
+  color: white;
+  opacity: 0.7;
+  margin-left:40px;
+  font-family: "Times New Roman", Times, serif;
+}
+.banner>span{
+  margin-left:40px;
 }
 .header{
   display: flex;
   flex-direction: row;
   grid-area: header;
 }
+.fas2 .fa-phone-square2{
+  display: none;
+}
 p{
   font-size: 2vw;
+  font-family: "Segoe UI",Arial,sans-serif;
 }
 span{
-  font-size: 1vw;
+  font-size: 1.1vw;
   font-family: "Times New Roman", Times, serif;
   opacity: 0.8;
 }
@@ -80,7 +92,9 @@ span{
 }
 .header3{
   margin:auto;
+  font-family: "Segoe UI",Arial,sans-serif;
   grid-area: header3;
+  font-size: 2vw;
 }
 .part1{
   margin: auto;
@@ -96,8 +110,9 @@ span{
   margin: 10px;
   width: 29%;
   padding: 10px;
-  font-size: 1.1vw;
+  font-size: 1.5vw;
   transition: 1s ease-in;
+  text-align: justify;
 }
 .bio:hover{
   background-color: #92a8d1;
@@ -112,11 +127,32 @@ span{
   display: block;
   text-align: center;
   margin:0 auto;
-  width :25%;;
+  width :25%;
 }
-
-
-
+.line1{
+  border:0.3px solid white;
+  width: 100%;
+}
+.line2{
+  margin: 5px;
+  border:0.3px solid white;
+  width: 80%;
+}
+.mob-about{
+  display: none;
+}
+.mob-name{
+  display: none;
+}
+.mob-foot{
+  display: none;
+}
+.mob-bio{
+  display: none;
+}
+.desktop-name>span{
+  font-size: 1.5vw;
+}
 @keyframes slideInFromRight {
   0% {
     transform: translateX(200%);
@@ -132,4 +168,107 @@ span{
   100% {
     transform: translateY(0);
   }
+}
+
+@media screen and (max-width: 600px) {
+  body{
+    margin: 0;
+    top: 0;
+    font-family:courier,arial,helvetica;
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: 1s;
+    flex-wrap: wrap;
+  }
+  .container{
+    margin: 0;
+    top: 0;
+    display: grid;
+    grid-template-rows: 6vh 0.8fr 9vh 24.7vh;
+    grid-gap: 15px;
+    grid-template-areas:
+    "header"
+    "header2"
+    "header3"
+    "info";
+    padding: 0;
+    margin: 0;
+    color: white;
+    animation: 2s ease-out 0s 1 slideInFromRight;
+  }
+  .desktop-name{
+    display: none;
+  }
+  .mob-about{
+    display: block;
+    font-size: 5vw;
+  }
+  .mob-name{
+    display:block;
+    text-align: center;
+    font-size: 6vw;
+  }
+  .banner{
+    animation: 1s ease-out 0s 1 slideInFromTop;
+    width:100%;
+  }
+  .banner>img{
+    width:55%;
+  }
+  .banner>span{
+    font-size: 4vw;
+  }
+  .bio{
+    display: none;
+  }
+  .mob-bio{
+    display: block;
+    margin: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 4vw;
+    transition: 1s ease-in;
+    text-align: justify;
+  }
+  .banner>a{
+    font-size: 4vw;
+  }
+  .link{
+    width:20%;
+  }
+  .mob-foot{
+    display: block;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  .link >a>img{
+    width: 75%;
+  }
+  .header3{
+    font-size: 5vw;
+  }
+
+
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
 }
